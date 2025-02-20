@@ -10,7 +10,7 @@ Soy José Antonio Cano, un apasionado científico de datos con experiencia en an
 - **Proyectos Destacados:** Una selección de los proyectos más relevantes en los que he trabajado, con detalles sobre el enfoque, las herramientas utilizadas y los resultados obtenidos.
 - **Habilidades Técnicas:** Un resumen de mis competencias en programación (Python,Pandas, SQL), análisis de datos, visualización y más.
 - **Contacto:** Información para que podamos conectar y discutir cómo puedo aportar a tus futuros proyectos.
-- 
+
 
 What else do you need?
 
