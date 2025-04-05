@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Antonio Cano Román - Portafolio Científico de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest"></script>
+    <style>
+        /* Configuración de la fuente Inter (recomendada por Tailwind) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo suave para scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Clases personalizadas si necesitas */
+        .section-padding {
+            @apply py-16 px-4 sm:px-6 lg:px-8;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg flex flex-col; /* Added flex flex-col */
+        }
+        .card-content {
+            @apply p-6 flex-grow; /* Added flex-grow */
+        }
+        /* Estilo para iconos de contacto */
+        .contact-icon {
+             width: 28px;
+             height: 28px;
+        }
+        /* Estilo para iconos de Tableau (usando path SVG simple ya que no está en Lucide) */
+        .tableau-icon path {
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="bg-white shadow-md fixed w-full z-10 top-0">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-indigo-600">José Antonio Cano Román</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Sobre Mí</a>
+                        <a href="#skills" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Habilidades</a>
+                        <a href="#projects" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+                        <a href="#experience" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Experiencia</a>
+                        <a href="#education" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Educación</a>
+                        <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Sobre Mí</a>
+                <a href="#skills" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Habilidades</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Experiencia</a>
+                <a href="#education" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Educación</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="bg-indigo-600 text-white pt-32 pb-16 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4"> ¡Hola!
+                soy José A. Cano Román</h1>
+            <p class="text-xl md:text-2xl mb-8 text-indigo-100">Data Scientist</p>
+            <p class="text-md md:text-lg max-w-3xl mx-auto text-indigo-200">
+                Científico de datos con conocimientos en análisis de datos, visualización de datos y machine learning para impulsar las decisiones empresariales a través de la creación de modelos predictivos y descriptivos a partir de datos complejos. Busco resolver problemas específicos y generar valor para la organización mediante el descubrimiento de patrones y la generación de insights accionables. Poseo sólida comprensión de herramientas de análisis estadístico, aprendizaje automático y visualización de datos.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Habilidades Técnicas</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Python</h3>
+                    <p class="text-sm text-gray-600">Pandas, NumPy, Matplotlib, Seaborn, Scipy</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Machine Learning</h3>
+                    <p class="text-sm text-gray-600">Scikit-learn, Keras, TensorFlow</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Bases de Datos</h3>
+                    <p class="text-sm text-gray-600">SQL (Consultas, Gestión)</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Visualización</h3>
+                    <p class="text-sm text-gray-600">Matplotlib, Seaborn, Plotly, Tableau</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Web Scraping</h3>
+                    <p class="text-sm text-gray-600">Requests, BeautifulSoup</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Web Dev</h3>
+                    <p class="text-sm text-gray-600">HTML, CSS, Streamlit</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
+                    <h3 class="text-lg font-semibold mb-2">Otras Herramientas</h3>
+                    <p class="text-sm text-gray-600">Excel, Git</p> </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Proyectos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="card">
+                    <img src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=Modelo+Predictivo" alt="[Imagen del proyecto Modelo Predictivo]" class="w-full h-48 object-cover">
+                    <div class="card-content">
+                        <h3 class="text-xl font-semibold mb-3">Modelo Predictivo de Cancelación de Clientes</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Análisis exploratorio (EDA), imputación de valores faltantes ('SimpleImputer'), manejo de desequilibrio de clases, codificación de categóricas, escalado y creación de modelos. Precisión final del 80.03%.
+                        </p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Numpy</span>
+                            <span class="inline-block bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Matplotlib</span>
+                            <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Scikit-learn</span>
+                        </div>
+                        <div class="flex space-x-4 mt-auto">
+                            <a href="https://github.com/bboytera/Modelo_Predictivo_Cancelacion_Clientes.git" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Ver en GitHub
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=App+Interactiva" alt="[Imagen del proyecto Página Interactiva]" class="w-full h-48 object-cover">
+                    <div class="card-content">
+                        <h3 class="text-xl font-semibold mb-3">Página Interactiva con Streamlit</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                           Creación de aplicación web interactiva con Streamlit para leer CSV de vehículos y generar visualizaciones (histograma, gráfico de dispersión) con Plotly. Configuración de servidor Streamlit en modo headless.
+                        </p>
+                         <div class="mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Plotly Express</span>
+                            <span class="inline-block bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Streamlit</span>
+                        </div>
+                        <div class="flex space-x-4 mt-auto">
+                             <a href="https://github.com/bboytera/Proyecto_app.py.git" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Ver en GitHub
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=Análisis+Viajes" alt="[Imagen del proyecto Análisis de Viajes]" class="w-full h-48 object-cover">
+                    <div class="card-content">
+                        <h3 class="text-xl font-semibold mb-3">Análisis de una Empresa de Viajes Compartidos</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                           Web scraping (Requests, BeautifulSoup) de datos climáticos, análisis con Pandas, consultas SQL complejas, análisis de preferencias de pasajeros, impacto del clima (prueba t-Student), y visualización con Matplotlib (Top 10 taxis, barrios).
+                        </p>
+                         <div class="mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">SQL</span>
+                            <span class="inline-block bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Matplotlib</span>
+                            <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Requests</span>
+                            <span class="inline-block bg-teal-100 text-teal-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">BeautifulSoup</span>
+                             <span class="inline-block bg-orange-100 text-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">HTML</span>
+                        </div>
+                        <div class="flex space-x-4 mt-auto">
+                             <a href="https://github.com/bboytera/Analisis-de-una-empresa-de-viajes-compartidos.git" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Ver en GitHub
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=Predicción+NVIDIA" alt="[Imagen del proyecto Predicción Acciones NVIDIA]" class="w-full h-48 object-cover">
+                    <div class="card-content">
+                        <h3 class="text-xl font-semibold mb-3">Predicción del Precio de Acciones de NVIDIA</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                           Análisis exploratorio y preprocesamiento de datos diarios de acciones (2004-2024). Comparación de modelos de Regresión (Linear Regression, Random Forest) con validación cruzada para predecir precios. Mejor modelo: Linear Regression (R²=0.7558), demostrando buen rendimiento y evitando sobreajuste.
+                        </p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="inline-block bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Matplotlib</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Numpy</span>
+                            <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Scikit-learn</span>
+                        </div>
+                        <div class="flex space-x-4 mt-auto">
+                             <a href="https://github.com/bboytera/Prediccion-del-precio-de-las-acciones-de-NVIDIA-.git" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Ver en GitHub
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div> <div class="text-center mt-12">
+                <a href="https://github.com/bboytera" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    Ver más proyectos en GitHub
+                </a>
+            </div>
+            </div>
+    </section>
+
+    <section id="experience" class="section-padding bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Experiencia Laboral</h2>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-odd:order-1 group-odd:group-hover:ml-0.5 group-even:group-hover:mr-0.5 text-slate-600 text-xl font-bold shadow-md md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                         IM
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-lg shadow-md ml-4 md:ml-0 group-odd:order-2 group-odd:ml-0 group-odd:mr-4">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <h3 class="font-bold text-indigo-600 text-lg">Fisioterapeuta</h3>
+                            <time class="font-caveat font-medium text-sm text-gray-500">2011 - Presente</time>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-700 mb-2">IMSS | Guadalajara, México</p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                            <li>Trabajo en equipo multidisciplinario de rehabilitación.</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-odd:order-1 group-odd:group-hover:ml-0.5 group-even:group-hover:mr-0.5 text-slate-600 text-xl font-bold shadow-md md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                         DI
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-lg shadow-md ml-4 md:ml-0 group-odd:order-2 group-odd:ml-0 group-odd:mr-4">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <h3 class="font-bold text-indigo-600 text-lg">Fisioterapeuta</h3>
+                            <time class="font-caveat font-medium text-sm text-gray-500">2009 - 2011</time>
+                        </div>
+                         <p class="text-sm font-semibold text-gray-700 mb-2">DIF | Guadalajara, México</p> <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                             <li>Trabajo en equipo multidisciplinario de rehabilitación.</li>
+                             </ul>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Educación y Certificaciones</h2>
+             <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6"> <h3 class="text-xl font-semibold mb-2">Bootcamp de Data Science</h3>
+                    <p class="text-indigo-600 font-medium mb-1">Escuela Tripleten</p>
+                    <p class="text-gray-500 text-sm mb-3">2023 - 2024</p>
+                    <p class="text-gray-600 text-sm">
+                        Curso intensivo con enfoque en análisis y modelado de datos: Python, Pandas, SQL, Machine Learning, Deep Learning, Visión Artificial, etc.
+                    </p>
+                </div>
+                <div class="card p-6"> <h3 class="text-xl font-semibold mb-2">Certificación en SQL</h3>
+                    <p class="text-indigo-600 font-medium mb-1">Mimo</p>
+                    <p class="text-gray-500 text-sm mb-3">Enero 2025</p> <p class="text-gray-600 text-sm">
+                        Comprensión de conceptos básicos de SQL: creación de tablas, consultas en una o varias tablas, gestión de bases de datos relacionales básicas.
+                    </p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-gray-800 text-gray-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 text-white">Ponte en Contacto</h2>
+            <p class="mb-8 text-lg text-gray-400">
+                Estoy abierto a nuevas oportunidades y colaboraciones. ¡No dudes en contactarme! (Guadalajara, México)
+            </p>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="mailto:jocanoroman@gmail.com" class="text-gray-400 hover:text-white transition duration-300" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail contact-icon"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="sr-only">Email</span>
+                </a>
+                <a href="https://linkedin.com/in/joseantoniocano-roman" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" title="LinkedIn">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin contact-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                   <span class="sr-only">LinkedIn</span>
+                </a>
+                <a href="https://github.com/bboytera" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github contact-icon"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-1.5 6-6.5.08-1.3-.5-2.6-1.5-3.5A4.71 4.71 0 0 0 18 1s-1-1-3 1a11 11 0 0 0-6 0c-2-2-3-1-3-1a4.71 4.71 0 0 0-.5 2.5c-1 1-1.58 2.2-1.5 3.5 0 5 3 6.5 6 6.5-1 1-1 2.5-1 3.5V22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    <span class="sr-only">GitHub</span>
+                </a>
+                 <a href="https://public.tableau.com/app/profile/jose.antonio.cano.rom.n/vizzes" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" title="Tableau Public">
+                    <svg class="contact-icon tableau-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12h5v10H2zm7 4h5v6h-5zm7-8h5v14h-5zM9 2h5v6H9zm7 0h5v2h-5z"/>
+                    </svg>
+                    <span class="sr-only">Tableau Public</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
+        <p class="text-sm">&copy; <span id="year"></span> José Antonio Cano Román. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Script básico para menú móvil
+        const btn = document.querySelector('button[aria-controls="mobile-menu"]');
+        const menu = document.getElementById('mobile-menu');
+        const openIcon = btn.querySelector('svg:first-child');
+        const closeIcon = btn.querySelector('svg:last-child');
+
+        btn.addEventListener('click', () => {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !isExpanded);
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            openIcon.classList.toggle('block');
+            closeIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('block');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                 if (!menu.classList.contains('hidden')) {
+                     btn.click(); // Simula clic en el botón para cerrar
+                 }
+            });
+        });
+    </script>
+</body>
+</html>
